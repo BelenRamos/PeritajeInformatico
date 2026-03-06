@@ -1,0 +1,136 @@
+/* Fuerza la visibilidad de los elementos reveal en la página de contacto */
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: all 0.8s ease-out;
+}
+
+:root {
+    --matrix-green: #00ff9c;
+    --neon-cyan: #00f2fe;
+  }
+  
+  /* Para que la clase .active funcione con el observer */
+  .reveal.active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+/* Fondo sólido y oscuro */
+.bg-dark {
+  background-color: #080808 !important;
+}  
+
+/* Esto asegura que el canvas de contacto no se escape de su sección */
+.contact-header {
+  position: relative; /* Muy importante */
+  height: 40vh;
+  min-height: 300px;
+  background: #000;
+  overflow: hidden;
+}
+
+#matrix-contact-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Fuerza a las secciones de abajo a ser visibles y negras */
+section.bg-dark {
+  background-color: #080808 !important;
+  display: block !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Inputs estilo Terminal */
+.cyber-input {
+  background-color: #000 !important;
+  border: 1px solid var(--matrix-green) !important;
+  color: var(--matrix-green) !important;
+  border-radius: 0 !important; /* Cuadrados se ven más tech */
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.cyber-input:focus {
+  border-color: var(--neon-cyan) !important;
+  box-shadow: 0 0 10px var(--neon-cyan) !important;
+  outline: none;
+}
+
+.cyber-form {
+  background-color: #0a0a0a;
+  box-shadow: inset 0 0 15px rgba(0, 255, 156, 0.1);
+}
+
+/* --- Mejora de visibilidad (Menos oscuridad total) --- */
+section.bg-dark {
+  background-color: #0d0d0d !important; /* Un gris casi negro pero con textura */
+  border-bottom: 1px solid rgba(0, 255, 156, 0.1); /* Línea divisoria sutil */
+}
+
+/* Cajas de info con fondo un poco más claro para que resalten */
+.row .col-md-4 {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border: 1px solid rgba(0, 242, 254, 0.1);
+  transition: all 0.3s;
+}
+
+.row .col-md-4:hover {
+  background: rgba(0, 242, 254, 0.05);
+  border-color: var(--neon-cyan);
+}
+
+/* --- Botón WhatsApp Cyber --- */
+.btn-whatsapp-cyber {
+  display: inline-flex;
+  align-items: center;
+  padding: 15px 30px;
+  background: transparent;
+  color: #25d366; /* Verde original de WA pero neón */
+  border: 2px solid #25d366;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 2px;
+  position: relative;
+  transition: all 0.3s;
+  box-shadow: 0 0 10px rgba(37, 211, 102, 0.2);
+}
+
+.btn-whatsapp-cyber i {
+  font-size: 1.5rem;
+  margin-right: 15px;
+}
+
+.btn-whatsapp-cyber:hover {
+  background: #25d366;
+  color: #000;
+  box-shadow: 0 0 30px rgba(37, 211, 102, 0.6);
+  transform: scale(1.05);
+}
+
+/* Estilo para los textos secundarios que se pierden */
+p, .form-label {
+  color: #b0b0b0 !important; /* Gris claro, no blanco puro para no cansar la vista */
+}
+
+/* Añade esto al final de tu CSS */
+body::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+              linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 9999;
+  pointer-events: none;
+  background-size: 100% 4px, 3px 100%;
+}

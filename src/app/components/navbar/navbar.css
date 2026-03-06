@@ -1,0 +1,62 @@
+/* --- Navbar Sólido y Minimalista --- */
+.modern-nav {
+  background-color: #000000 !important; /* Color sólido sin transparencias */
+  border-bottom: 1px solid #1a1a1a; /* Línea divisoria muy fina y discreta */
+  padding: 1rem 0;
+  box-shadow: none; /* Eliminamos sombras pesadas */
+}
+
+/* --- Tipografía del Brand --- */
+.navbar-brand {
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.brand-main {
+  color: #ffffff;
+}
+
+.brand-sub {
+  color: #00ff9c; /* Tu verde neón pero aplicado solo como detalle */
+  margin-left: 5px;
+}
+
+/* --- Items del Menú --- */
+.nav-item-modern {
+  color: #888888 !important; /* Gris neutro para items no activos */
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-left: 20px;
+  transition: color 0.2s ease;
+}
+
+.nav-item-modern:hover {
+  color: #ffffff !important;
+}
+
+/* --- Estado Activo (Minimalista) --- */
+.active-modern {
+  color: #00ff9c !important; /* Resalte en verde sólido */
+  position: relative;
+}
+
+/* Línea indicadora debajo del item activo (Opcional) */
+.active-modern::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 15%;
+  width: 70%;
+  height: 2px;
+  background-color: #00ff9c;
+}
+
+/* Quitar el borde del botón en móviles para que sea más limpio */
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}

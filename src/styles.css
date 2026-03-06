@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  body {
+    padding-top: 50px;
+  }
+
+  section {
+    padding-left: 50px;
+    padding-right: 50px;
+  }

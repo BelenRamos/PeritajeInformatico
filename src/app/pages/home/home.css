@@ -1,0 +1,144 @@
+/* Estado inicial de los elementos con reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+/* Estado cuando entran en pantalla */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ----- */
+.hero {
+  height: 100vh;
+  background: black;
+  overflow: hidden;
+}
+
+#matrix-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero .container {
+  z-index: 2;
+}
+
+.hero h1,
+.hero h2,
+.hero p {
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+/* ----- */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.fade-delay-1 {
+  animation-delay: 0.3s;
+}
+
+.fade-delay-2 {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----- */
+:root {
+  --matrix-green: #00ff9c;
+  --neon-cyan: #00f2fe;
+}
+
+/* Fondo sólido y oscuro */
+.bg-dark {
+  background-color: #080808 !important;
+}
+
+/* TARJETAS: El resplandor va al BORDE, no al texto */
+.service-card {
+  background-color: #121212 !important;
+  border: 1px solid rgba(0, 255, 156, 0.3) !important; /* Borde sutil verde */
+  transition: all 0.3s ease;
+}
+
+/* Título SÓLIDO: Sin sombras raras */
+.service-card .card-title {
+  color: whitesmoke!important; 
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: none !important; /* Quitamos el aura */
+}
+
+.service-card .card-text {
+  color: #dcdcdc !important; /* Blanco suave para lectura larga */
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* HOVER: Solo aquí usamos un poco de luz en el borde */
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--neon-cyan) !important;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.2) !important; /* Aura suave afuera de la caja */
+}
+
+.service-card:hover .card-title {
+  color: var(--neon-cyan) !important;
+}
+
+/* BOTÓN: Sólido para que se vea bien el clic */
+.btn-neon-cyan {
+  color: var(--neon-cyan) !important;
+  border: 2px solid var(--neon-cyan) !important;
+  background: transparent !important;
+  font-weight: bold;
+}
+
+.btn-neon-cyan:hover {
+  background: var(--neon-cyan) !important;
+  color: #000 !important;
+}
+
+/* Estilo para los iconos de la lista */
+.icon-neon {
+  color: var(--neon-cyan) !important;
+  font-size: 1.2rem;
+  width: 25px; /* Ancho fijo para que el texto quede alineado */
+  text-align: center;
+  /* Un brillo muy sutil solo en el icono, no en el texto */
+  filter: drop-shadow(0 0 3px rgba(0, 242, 254, 0.4));
+}
+
+.item span {
+  color: #e0e0e0; /* Blanco suave para legibilidad */
+  font-size: 1.1rem;
+}
+
+/* Efecto opcional: Que el icono cambie de color cuando pasas el mouse sobre el li */
+.item:hover .icon-neon {
+  color: var(--matrix-green) !important;
+  filter: drop-shadow(0 0 5px rgba(0, 255, 156, 0.6));
+  transition: all 0.3s ease;
+}
+
+.item:hover span {
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
