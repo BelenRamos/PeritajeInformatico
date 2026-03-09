@@ -25,7 +25,7 @@ export class Home implements AfterViewInit {
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
     
-    const letters = "01";
+    const letters = "123456789";
     const fontSize = 14;
     const columns = canvas.width / fontSize;
     
@@ -49,7 +49,7 @@ export class Home implements AfterViewInit {
     
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
     
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.99) {
           drops[i] = 0;
         }
     
@@ -57,7 +57,7 @@ export class Home implements AfterViewInit {
       }
     }
     
-    setInterval(draw, 33);
+    setInterval(draw, 50);
     // --- NUEVA LÓGICA PARA REVEAL ---
     const observerOptions = {
       threshold: 0.15 // Se activa cuando el 15% del elemento es visible

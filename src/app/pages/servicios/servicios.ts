@@ -42,7 +42,7 @@ export class Servicios implements AfterViewInit, OnDestroy {
     canvas.width = parent ? parent.offsetWidth : window.innerWidth;
     canvas.height = parent ? parent.offsetHeight : 400;
 
-    const letters = "01";
+    const letters = "0123456789";
     const fontSize = 14;
     const columns = canvas.width / fontSize;
     const drops: number[] = Array(Math.floor(columns)).fill(1);
@@ -56,14 +56,14 @@ export class Servicios implements AfterViewInit, OnDestroy {
       for (let i = 0; i < drops.length; i++) {
         const text = letters[Math.floor(Math.random() * letters.length)];
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.99) {
           drops[i] = 0;
         }
         drops[i]++;
       }
     };
 
-    this.intervalId = setInterval(draw, 33);
+    this.intervalId = setInterval(draw, 50);
   }
 
   ngOnDestroy() {
