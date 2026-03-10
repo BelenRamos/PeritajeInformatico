@@ -60,3 +60,43 @@
 .navbar-toggler:focus {
   box-shadow: none;
 }
+
+/* Para media */
+/* Asegura que el fondo sea negro sólido también al desplegarse en móviles */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: #000000;
+    padding: 1rem;
+    border-top: 1px solid #222;
+    margin-top: 10px;
+  }
+  
+  .nav-item-modern {
+    margin: 10px 0; /* Espaciado entre links en el celular */
+    font-size: 1rem;
+  }
+
+  .active-modern::after {
+    display: none; /* Quitamos la línea de abajo en móvil para que no quede raro */
+  }
+  
+  .active-modern {
+    border-left: 3px solid #00ff9c; /* Cambiamos por una línea lateral en el celu */
+    padding-left: 10px !important;
+  }
+}
+
+/* Personalización del icono de la hamburguesa para que sea verde neón */
+.custom-toggler {
+  border: none !important; /* Sin borde para look minimalista */
+}
+
+.custom-toggler:focus {
+  box-shadow: none !important; /* Sin brillo azul de Bootstrap */
+}
+
+/* Forzamos que el icono sea del color de tu marca */
+.navbar-toggler-icon {
+  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(134deg) brightness(100%) contrast(105%);
+  /* Este filter convierte el icono blanco de bootstrap a tu verde #00ff9c aprox */
+}
