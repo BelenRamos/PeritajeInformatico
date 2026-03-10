@@ -27,27 +27,62 @@ html, body {
   border-radius: 0 4px 4px 0;
 }
 
-/* --- Acordeón Cyberpunk --- */
+/* --- Título de la Sección --- */
+h2.text-white {
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #ffffff !important;
+  text-transform: uppercase;
+}
+
+/* --- Botones del Acordeón (Las Preguntas) --- */
 .cyber-accordion-btn {
   background-color: #0a0a0a !important;
-  color: var(--neon-cyan) !important;
+  color: #ffffff !important; /* Blanco sólido para la pregunta */
+  font-size: 1.05rem;
+  font-weight: 600;
   border: none !important;
-  box-shadow: none !important;
-  font-weight: bold;
+  padding: 1.25rem;
 }
 
+/* Cuando la pregunta está abierta */
 .cyber-accordion-btn:not(.collapsed) {
   background-color: #111 !important;
-  color: var(--matrix-green) !important;
-  border-bottom: 1px solid var(--matrix-green) !important;
+  color: var(--matrix-green) !important; /* Verde solo cuando está activa */
+  box-shadow: inset 0 -1px 0 rgba(0, 255, 156, 0.2) !important;
 }
 
-.cyber-accordion-btn::after {
-  filter: invert(1) hue-rotate(180deg); /* Ajusta la flechita de Bootstrap al color neón */
+/* --- Cuerpo del Acordeón (Las Respuestas) --- */
+.accordion-body {
+  background-color: #050505 !important;
+  color: #ced4da !important; /* Gris platino: legible pero no encandila */
+  line-height: 1.6;
+  font-size: 0.95rem;
+  border-top: 1px solid #222 !important;
 }
 
+/* Resaltados dentro del texto (Strong) */
+.accordion-body strong {
+  color: #ffffff !important; /* Blanco puro para términos clave */
+  font-weight: 700;
+  border-bottom: 1px solid var(--matrix-green); /* Subrayado sutil verde */
+}
+
+/* Ajuste de la flecha de Bootstrap */
+.accordion-button::after {
+  filter: brightness(0) invert(1); /* Hace la flecha blanca */
+}
+
+/* --- Bordes del Item --- */
 .accordion-item {
-  margin-bottom: 10px;
-  border: 1px solid rgba(0, 242, 254, 0.2) !important;
+  background-color: transparent !important;
+  border: 1px solid #333 !important; /* Borde gris oscuro sólido */
+  margin-bottom: 8px;
+  border-radius: 4px !important;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
 }
 
+.accordion-item:hover {
+  border-color: var(--matrix-green) !important; /* Se ilumina al pasar el mouse */
+}
